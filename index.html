@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Formulário de Contato</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/png" href="icon.png">
 </head>
 <body>
   <main class="card">
@@ -30,12 +29,30 @@
         <small class="erro">Digite um e-mail válido.</small>
       </div>
 
+      <!-- 1. Campo Telefone com RegEx -->
+      <div class="campo">
+        <label for="telefone">Telefone *</label>
+        <input type="tel" id="telefone" name="telefone"
+               placeholder="(11) 99999-9999"
+               required pattern="\(\d{2}\) \d{4,5}-\d{4}" autocomplete="tel">
+        <small class="erro">Informe no formato (XX) XXXXX-XXXX ou (XX) XXXX-XXXX.</small>
+      </div>
+
       <div class="campo">
         <label for="senha">Senha *</label>
         <input type="password" id="senha" name="senha"
                placeholder="Mínimo 8 caracteres"
                required minlength="8" autocomplete="new-password">
         <small class="erro">A senha deve ter 8 ou mais caracteres.</small>
+      </div>
+
+      <!-- 2. Campo Confirmar Senha -->
+      <div class="campo">
+        <label for="confirmar-senha">Confirmar Senha *</label>
+        <input type="password" id="confirmar-senha" name="confirmar_senha"
+               placeholder="Repita a sua senha"
+               required minlength="8" autocomplete="new-password">
+        <small class="erro">Confirme a senha idêntica à digitada acima.</small>
       </div>
 
       <div class="campo">
